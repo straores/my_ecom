@@ -1,0 +1,3 @@
+ec_pages_homepage:
+    path:     /
+    defaults: { _controller: ECPagesBundle:Default:index }

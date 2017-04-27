@@ -1,0 +1,3 @@
+ec_utilisateurs_homepage:
+    path:     /
+    defaults: { _controller: ECUtilisateursBundle:Default:index }

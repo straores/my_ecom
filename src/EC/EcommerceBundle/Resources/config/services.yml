@@ -1,0 +1,21 @@
+services:
+#    ec_ecommerce.example:
+#        class: EC\EcommerceBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    Tva.twig_extension:
+      class: EC\EcommerceBundle\Twig\Extension\TvaExtension
+      public: false
+      tags:
+        - { name: twig.extension }
+
+    montantTva:
+      class: EC\EcommerceBundle\Twig\Extension\MontantTvaExtension
+      tags:
+        - { name: twig.extension }
+
+    redirectionListener:
+      class: EC\EcommerceBundle\Listener\RedirectionListener
+      arguments: [@service_container,@session]
+      tags:
+        - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
